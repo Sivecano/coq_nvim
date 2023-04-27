@@ -174,6 +174,7 @@ async def _comp_done(stack: Stack, event: Mapping[str, Any]) -> None:
                     new_metric = await _resolve(stack=stack, metric=metric)
 
                     if isinstance((extern := new_metric.comp.extern), ExternLSP):
+                        log.warn("going in")
                         await cmd(extern=extern)
 
                     if new_metric.comp.uid in stack.metrics:
