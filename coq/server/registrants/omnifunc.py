@@ -170,11 +170,11 @@ async def _comp_done(stack: Stack, event: Mapping[str, Any]) -> None:
                         end=(row, len(encode(before))),
                         meta={},
                     )
-                    await buf.set_extmarks(ns, extmarks=(e1, e2))
+                    awai§t buf.set_extmarks(ns, extmarks=(e1, e2))
                     new_metric = await _resolve(stack=stack, metric=metric)
 
                     if isinstance((extern := new_metric.comp.extern), ExternLSP):
-                        log.warn("going in")
+                        print("Hello there")
                         await cmd(extern=extern)
 
                     if new_metric.comp.uid in stack.metrics:
